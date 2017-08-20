@@ -7,9 +7,18 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { OrganisationenPage } from '../pages/pages';
+import { FavoritenPage } from '../pages/pages';
+import { WuenschePage } from '../pages/pages';
+import { WunschDetailPage } from '../pages/pages';
+import { LandingPage } from '../pages/pages';
+import { OrganisationenDetailPage } from '../pages/pages';
+import { HttpModule } from '@angular/http';
+import { KeysPipe } from '../pipes/keys/keys';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { StartProvider } from '../providers/start/start';
 
 @NgModule({
   declarations: [
@@ -17,11 +26,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    WuenschePage,
+    WunschDetailPage,
+    OrganisationenPage,
+    FavoritenPage,
+    LandingPage,
+    OrganisationenDetailPage,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,12 +46,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    WuenschePage,
+    WunschDetailPage,
+    OrganisationenPage,
+    FavoritenPage,
+    LandingPage,
+    OrganisationenDetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    StartProvider
   ]
 })
 export class AppModule {}

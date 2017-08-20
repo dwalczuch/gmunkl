@@ -1,0 +1,30 @@
+<!--
+  Generated template for the OrganisationenDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ organisation.name }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1 align="center">{{ organisation.name }} </h1>
+  <p align="center"> in {{ organisation.stadt }} </p>
+  <img [src]="organisation.logo"/>
+  <p> {{ organisation.beschreibung }} </p>
+  <h3>Kontakt</h3>
+  {{ organisation.name }}
+  <br>
+  {{ organisation.strasse }} {{ organisation.hausnummer }}
+  <div *ngIf="organisation.adresszusatz">({{ organisation.adresszusatz }})</div>
+  <br>
+  {{ organisation.plz }} {{ organisation.stadt }}
+  <br><br>
+  <button ion-button block color="secondary" (click)="navigate()"><ion-icon name="navigate" style="font-size: 35px;"></ion-icon></button>
+</ion-content>
